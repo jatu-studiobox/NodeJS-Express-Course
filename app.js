@@ -3,7 +3,7 @@ const express = require("express"); // import express เข้ามาใช�
 // const debug = require("debug")("app"); // import debug เข้ามาใช้งาน
 // const morgan = require("morgan");   // import morgan เข้ามาใช้งาน
 const app = express();  // ประกาศ app ให้ใช้งาน express
-const port = 3000;  // ค่า port ในการใช้งาน web app
+const port = process.env.PORT || 3000;  // ค่า port ในการใช้งาน web app
 
 // app.use(morgan("combined"));    // เรียกใช้งาน morgan
 
