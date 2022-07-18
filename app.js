@@ -5,7 +5,7 @@ const express = require("express"); // import express เข้ามาใช�
 const app = express();  // ประกาศ app ให้ใช้งาน express
 const port = 3000;  // ค่า port ในการใช้งาน web app
 
-app.use(morgan("combined"));    // เรียกใช้งาน morgan
+// app.use(morgan("combined"));    // เรียกใช้งาน morgan
 
 app.get("/", (req, res) => {    // รับ request 'get' ที่ root uri
     res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
