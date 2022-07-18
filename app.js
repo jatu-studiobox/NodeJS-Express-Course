@@ -8,7 +8,7 @@ const port = 3000;  // ค่า port ในการใช้งาน web app
 app.use(morgan("combined"));    // เรียกใช้งาน morgan
 
 app.get("/", (req, res) => {    // รับ request 'get' ที่ root uri
-    res.send("Hello, Jatu Tung");   // คำสั่งตอบกลับ
+    res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
 });
 
 app.listen(port, () => {    // สั่งให้ app รอ request ที่ port ที่กำหนดไว้
