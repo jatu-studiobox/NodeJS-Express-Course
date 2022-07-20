@@ -5,7 +5,7 @@ const morgan = require("morgan");   // import morgan เข้ามาใช้
 const path = require("path");   // เรียกใช้งาน 'path' เพื่อใช้ในการเข้าถึง folder static file
 
 const app = express();  // ประกาศ app ให้ใช้งาน express
-const port = process.env.PORT || 3000;  // ค่า port ในการใช้งาน web app
+const PORT = process.env.PORT || 4000;  // ค่า port ในการใช้งาน web app
 
 app.use(morgan("combined"));    // เรียกใช้งาน morgan
 // express.static เป็น middle ware ในการใช้งาน static file
@@ -15,10 +15,10 @@ app.get("/", (req, res) => {    // รับ request 'get' ที่ root uri
     res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
 });
 
-app.listen(port, () => {    // สั่งให้ app รอ request ที่ port ที่กำหนดไว้
+app.listen(PORT, () => {    // สั่งให้ app รอ request ที่ port ที่กำหนดไว้
     // console.log("Listening on port %d", port);
     // เรียกใช้งาน Chalk ในการแสดงผลใน terminal ให้เป็นสี
     // console.log("Listening on port : " + chalk.green(port));
     // ใช้ debug แทน console.log
-    debug("Listening on port : " + chalk.green(port));
+    debug("Listening on port : " + chalk.red(PORT));
 });
