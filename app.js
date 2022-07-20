@@ -2,10 +2,14 @@ const express = require("express"); // import express เข้ามาใช�
 const chalk = require("chalk"); // import chalk เข้ามาใช้งาน
 const debug = require("debug")("app"); // import debug เข้ามาใช้งาน
 const morgan = require("morgan");   // import morgan เข้ามาใช้งาน
+const path = require("path");   // เรียกใช้งาน 'path' เพื่อใช้ในการเข้าถึง folder static file
+
 const app = express();  // ประกาศ app ให้ใช้งาน express
 const port = process.env.PORT || 3000;  // ค่า port ในการใช้งาน web app
 
 app.use(morgan("combined"));    // เรียกใช้งาน morgan
+// express.static เป็น middle ware ในการใช้งาน static file
+app.use(express.static(path.join(__dirname, "/public/")));
 
 app.get("/", (req, res) => {    // รับ request 'get' ที่ root uri
     res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
