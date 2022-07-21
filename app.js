@@ -20,7 +20,8 @@ app.set("view engine", "ejs");
 
 // สร้าง function การทำงาน สำหรับรองรับการทำงานของ route 'products'
 productRouter.route("/").get((req, res) => {
-    res.send("Hello, I am Products !!!");
+    // res.send("Hello, I am Products !!!");
+    res.render("products");
 });
 
 productRouter.route("/1").get((req, res) => {
