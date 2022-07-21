@@ -135,7 +135,18 @@
     </header>
     <!-- ====== Header End ====== -->
 
-    
+    <section id="features" class="ud-features">
+        <div class="container">
+            <% products.map((product)=> { %>
+                <h4>
+                    <%=product.productTitle%>
+                </h4>
+                <p>
+                    <%=product.productDescription%>
+                </p>
+            <% }); %>
+        </div>
+    </section>
 
     <!-- ====== Footer Start ====== -->
     <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">

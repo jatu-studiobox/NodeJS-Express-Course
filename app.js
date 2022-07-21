@@ -21,7 +21,14 @@ app.set("view engine", "ejs");
 // สร้าง function การทำงาน สำหรับรองรับการทำงานของ route 'products'
 productRouter.route("/").get((req, res) => {
     // res.send("Hello, I am Products !!!");
-    res.render("products");
+    res.render("products", {
+        products: [
+            { productTitle: "น้ำยาล้างจาน", productDescription: "น้ำยาล้างจานสูตร 1", productPrice: 45 },
+            { productTitle: "น้ำยาซักผ้า", productDescription: "น้ำยาซักผ้าแบบเข้มข้น", productPrice: 79 },
+            { productTitle: "โฟมล้างหน้า", productDescription: "โฟมล้างหน้าสูตรอ่อนโยน", productPrice: 120 },
+            { productTitle: "ยาสีฟัน", productDescription: "ยาสีฟันสมุนไพร", productPrice: 89 },
+        ]
+    });
 });
 
 productRouter.route("/1").get((req, res) => {
