@@ -11,8 +11,17 @@ app.use(morgan("combined"));    // เรียกใช้งาน morgan
 // express.static เป็น middle ware ในการใช้งาน static file
 app.use(express.static(path.join(__dirname, "/public/")));
 
+// กำหนด 'views' folder ให้เป็นที่เก็บ views ของ app
+app.set("views", "./src/views");
+// เรียกใช้งาน view engine
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {    // รับ request 'get' ที่ root uri
-    res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
+    // res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
+
+    // Render ไฟล์ ejs
+    // เรียก render หน้า index.html และ ส่งค่า parameter 'username' เข้าไปในไฟล์ด้วย
+    res.render("index", { username: "Jatu Tung", customers: ["Test1", "Test2", "Test3"] });
 });
 
 app.listen(PORT, () => {    // สั่งให้ app รอ request ที่ port ที่กำหนดไว้
