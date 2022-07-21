@@ -27,8 +27,9 @@ productRouter.route("/").get((req, res) => {
     res.render("products", products);
 });
 
-productRouter.route("/1").get((req, res) => {
-    res.send("Hello, I am Products 1 !!!");
+productRouter.route("/:id").get((req, res) => {
+    const id = req.params.id;
+    res.send("Hello, I am Products " + id + " !!!");
 });
 
 // เรียกใช้งาน productRouter เมื่อมี context url '/products' เข้ามา
