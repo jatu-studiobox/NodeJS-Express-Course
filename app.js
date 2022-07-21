@@ -4,6 +4,8 @@ const debug = require("debug")("app"); // import debug เข้ามาใช�
 const morgan = require("morgan");   // import morgan เข้ามาใช้งาน
 const path = require("path");   // เรียกใช้งาน 'path' เพื่อใช้ในการเข้าถึง folder static file
 
+const productRouter = express.Router(); // สร้างตัวแปร productRouter เพื่อให้เป็น Router สำหรับ products
+
 const app = express();  // ประกาศ app ให้ใช้งาน express
 const PORT = process.env.PORT || 4000;  // ค่า port ในการใช้งาน web app
 
@@ -15,6 +17,18 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views", "./src/views");
 // เรียกใช้งาน view engine
 app.set("view engine", "ejs");
+
+// สร้าง function การทำงาน สำหรับรองรับการทำงานของ route 'products'
+productRouter.route("/").get((req, res) => {
+    res.send("Hello, I am Products !!!");
+});
+
+productRouter.route("/1").get((req, res) => {
+    res.send("Hello, I am Products 1 !!!");
+});
+
+// เรียกใช้งาน productRouter เมื่อมี context url '/products' เข้ามา
+app.use("/products", productRouter);
 
 app.get("/", (req, res) => {    // รับ request 'get' ที่ root uri
     // res.send("Hello, StudioBox");   // คำสั่งตอบกลับ
