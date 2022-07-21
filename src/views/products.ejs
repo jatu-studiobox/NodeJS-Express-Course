@@ -139,7 +139,7 @@
         <div class="container">
             <% products.map((product)=> { %>
                 <h4>
-                    <%=product.productTitle%>
+                    <a href="/products/<%=product.id%>"><%=product.productTitle%></a>
                 </h4>
                 <p>
                     <%=product.productDescription%>

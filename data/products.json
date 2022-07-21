@@ -1,24 +1,34 @@
 {
   "products": [
     {
+      "id": 0,
       "productTitle": "น้ำยาล้างจาน",
       "productDescription": "น้ำยาล้างจานสูตร 1",
       "productPrice": 30
     },
     {
+      "id": 1,
       "productTitle": "น้ำยาซักผ้า",
       "productDescription": "น้ำยาซักผ้าแบบเข้มข้น",
       "productPrice": 79
     },
     {
+      "id": 2,
       "productTitle": "โฟมล้างหน้า",
       "productDescription": "โฟมล้างหน้าสูตรอ่อนโยน",
       "productPrice": 120
     },
     {
+      "id": 3,
       "productTitle": "ยาสีฟัน",
       "productDescription": "ยาสีฟันสมุนไพร",
       "productPrice": 89
+    },
+    {
+      "id": 4,
+      "productTitle": "น้ำเปล่า 1.5L แพค 6 ขวด",
+      "productDescription": "น้ำเปล่า 1.5L แพค 6 ขวด ยี่ห้อ AAA",
+      "productPrice": 46
     }
   ]
 }
