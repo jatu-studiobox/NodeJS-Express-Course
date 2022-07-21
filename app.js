@@ -4,6 +4,9 @@ const debug = require("debug")("app"); // import debug เข้ามาใช�
 const morgan = require("morgan");   // import morgan เข้ามาใช้งาน
 const path = require("path");   // เรียกใช้งาน 'path' เพื่อใช้ในการเข้าถึง folder static file
 
+// ดึงข้อมูล products จาก json ไฟล์
+const products = require("./data/products.json");
+
 const productRouter = express.Router(); // สร้างตัวแปร productRouter เพื่อให้เป็น Router สำหรับ products
 
 const app = express();  // ประกาศ app ให้ใช้งาน express
@@ -21,14 +24,7 @@ app.set("view engine", "ejs");
 // สร้าง function การทำงาน สำหรับรองรับการทำงานของ route 'products'
 productRouter.route("/").get((req, res) => {
     // res.send("Hello, I am Products !!!");
-    res.render("products", {
-        products: [
-            { productTitle: "น้ำยาล้างจาน", productDescription: "น้ำยาล้างจานสูตร 1", productPrice: 45 },
-            { productTitle: "น้ำยาซักผ้า", productDescription: "น้ำยาซักผ้าแบบเข้มข้น", productPrice: 79 },
-            { productTitle: "โฟมล้างหน้า", productDescription: "โฟมล้างหน้าสูตรอ่อนโยน", productPrice: 120 },
-            { productTitle: "ยาสีฟัน", productDescription: "ยาสีฟันสมุนไพร", productPrice: 89 },
-        ]
-    });
+    res.render("products", products);
 });
 
 productRouter.route("/1").get((req, res) => {
