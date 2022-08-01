@@ -19,6 +19,6 @@ const AirbnbSchema = new Schema({
     reviews_per_month: Number
 });
 
-const Airbnb = mongoose.model('airbnb', AirbnbSchema);
+const Airbnb = mongoose.model('airbnbs', AirbnbSchema);
 
 module.exports = Airbnb;

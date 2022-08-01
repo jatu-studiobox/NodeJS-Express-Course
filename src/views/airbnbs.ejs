@@ -137,31 +137,26 @@
 
     <section id="features" class="ud-features">
         <div class="container">
-            <h1>Airbnb Room</h1>
+            <h1>All Airbnb Rooms</h1>
         </div>
         <div class="container">
-            <h4><%=room.name%></h4>
-            <p>
-                Host name: <%=room.host_name%>
-            </p>
-            <p>
-                Neighbourhood: <%=room.neighbourhood%>
-            </p>
-            <p>
-                Latitude: <%=room.latitude%> 
-            </p>
-            <p>
-                Longitude: <%=room.longitude%> 
-            </p>
-            <p>
-                Room Type: <%=room.room_type%>
-            </p>
-            <p>
-                Minimum Nights: <%=room.minimum_nights%>
-            </p>
-            <p>
-                ราคา : <%=room.price%> บาท
-            </p>
+            <% rooms.map((room)=> { %>
+                <h4>
+                    <a href="/airbnb/<%=room.id%>"><%=room.name%></a>
+                </h4>
+                <p>
+                    Host name: <%=room.host_name%>
+                </p>
+                <p>
+                    Neighbourhood: <%=room.neighbourhood%>
+                </p>
+                <p>
+                    Room Type: <%=room.room_type%>
+                </p>
+                <p>
+                    ราคา : <%=room.price%> บาท
+                </p>
+            <% }); %>
         </div>
     </section>
 

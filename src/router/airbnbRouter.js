@@ -1,24 +1,28 @@
 const express = require("express");
 const airbnbRouter = express.Router();
-// ดึงข้อมูล products จาก json ไฟล์
 
+// เรียกใช้งาน Model Airbnb
 const Airbnb = require('../models/Airbnb');
 
 // สร้าง function การทำงาน สำหรับรองรับการทำงานของ route 'products'
 airbnbRouter.route("/").get(async (req, res) => {
-    // const airbnb = await Airbnb.findOne({ name: 'BRIGHTON' }).exec();
-    // const airbnb = await Airbnb.find().limit(15);
-    Airbnb.find({}).sort({_id: -1}).limit(1).then((bnb) => {
-        const bnbItem = bnb[0];
-        // res.send("Hello, I am Products !!!");      
-        res.render("airbnb", { bnbItem: bnbItem });
+    Airbnb.find({}).then((rooms) => {
+        res.render("airbnbs", {
+            rooms
+        });
     });
 });
 
 airbnbRouter.route("/:id").get((req, res) => {
     const id = req.params.id;
-    // res.send("Hello, I am Products " + id + " !!!");
-    res.render("product", { product: products[id] });
+
+    Airbnb.findOne({ id: id }).then((room) => {
+        console.log("room: ", room);
+        // res.send("Hello, I am room " + id + " !!!");
+        res.render("airbnb", {
+            room : room
+        });
+    });
 });
 
 module.exports = airbnbRouter;
