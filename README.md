@@ -1,6 +1,6 @@
 # NodeJS-Express-Course
 
-Repository นี้เป็นแบบฝึกหัดระหว่างเรียน Course [Introduction to Web App Development with Node.js & Express](https://academy.borntodev.com/courses/enrolled/1603554) ของ [borntoDev Coding Academy](https://academy.borntodev.com/) (Course ภาษไทยฟรีดี ๆ ที่หนึ่ง)
+Repository นี้เป็นแบบฝึกหัดระหว่างเรียน Course [Introduction to Web App Development with Node.js & Express](https://academy.borntodev.com/courses/enrolled/1603554) ของ [borntoDev Coding Academy](https://academy.borntodev.com/) (Course ภาษไทยฟรีดี ๆ)
 
 PaaS ใช้งาน [Heroku](https://www.heroku.com) เป็น Application Server
 
@@ -15,3 +15,5 @@ Application นี้ใช้งาน Database NoSQL [Cloud MongoDB](https://w
 * [Free One Page Templates](https://onepagelove.com/templates/free-templates)
 * [Heroku: Cloud Application Platform](https://www.heroku.com)
 * [MongoDB Atlas | MongoDB](https://www.mongodb.com)
+* [Inside Airbnb: Get the Data](http://insideairbnb.com/get-the-data)
+* [CSV to JSON - CSVJSON](https://csvjson.com/csv2json)
